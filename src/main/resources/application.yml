@@ -1,0 +1,75 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 5m
+  compression:
+    enabled: true
+    min-response-size: 2KB
+
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 10MB
+  banner:
+    image:
+      location: banner.txt
+  application:
+    name: SpringAdvance
+#  config:
+#    import: application-web.yml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.36:3306/advance?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username : root
+    password: 123456
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+
+servlet:
+  tomcat:
+    max-swallow-size: -1 # 解决上传图片超过2MB之后，出现连接重置的问题
+
+
+security:
+  salt: tech_π # 密码加盐, 更安全的做法是每个用户的密码使用独立的盐，并将其保存在用户表中
+  salt-index: 3 # 盐插入的位置
+
+
+mybatis-plus:
+  configuration:
+    #开启下划线转驼峰
+    map-underscore-to-camel-case: true
+
+knife4j:
+  enable: true
+  setting:
+    language: zh-CN
+  openapi:
+    title: SpringAdvance
+    description:  一个基于Springboot的后端API测试系统
+    version: 1.0.0
+#    concat:
+#      kk
+#    license: Apache License 2.0
+#    license-url: https://github.com/itwanger/paicoding/blob/main/License
+#    email:
+#    group:
+#      admin:
+#        group-name: 后台接口分组
+#        api-rule: package
+#        api-rule-resources:
+#          - com.github.paicoding.forum.web.admin
+#      front:
+#        group-name: 前台接口分组
+#        api-rule: package
+#        api-rule-resources:
+#          - com.github.paicoding.forum.web.front
