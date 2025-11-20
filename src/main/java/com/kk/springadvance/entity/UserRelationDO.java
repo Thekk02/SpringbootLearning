@@ -1,7 +1,7 @@
 package com.kk.springadvance.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.kk.springadvance.basedo.BaseDo;
+import com.kk.springadvance.base.BaseDo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

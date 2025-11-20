@@ -1,7 +1,5 @@
-package com.kk.springadvance.basedo;
+package com.kk.springadvance.base;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import java.io.Serializable;

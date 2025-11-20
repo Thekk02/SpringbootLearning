@@ -1,7 +1,7 @@
 package com.kk.springadvance.service.Imp;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.kk.springadvance.Mapper.UserMapper;
+import com.kk.springadvance.mapper.UserMapper;
 import com.kk.springadvance.entity.UserDO;
 import com.kk.springadvance.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

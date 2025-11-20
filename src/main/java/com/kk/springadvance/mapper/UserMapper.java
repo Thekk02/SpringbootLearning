@@ -1,4 +1,4 @@
-package com.kk.springadvance.Mapper;
+package com.kk.springadvance.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.kk.springadvance.entity.UserDO;
