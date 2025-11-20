@@ -17,5 +17,5 @@ public class BaseDo implements Serializable {
     private Long id;
 
     private Date createTime;
-    private Date updateime;
+    private Date updateTime;
 }

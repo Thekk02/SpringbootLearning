@@ -16,5 +16,10 @@ import org.springframework.stereotype.Service;
 public class UserServiceImp extends ServiceImpl<UserMapper, UserDO> implements UserService {
     @Autowired
     private UserMapper userMapper;
-    
+
+    @Override
+    public UserDO getById(Integer id) {
+        UserDO user = userMapper.selectById(id);
+        return user;
+    }
 }

@@ -19,7 +19,7 @@ public class UserDO extends BaseDo {
     /**
      * 用户状态
      */
-    private Integer delete;
+    private Integer deleted;
 
     /**
      * 用户名

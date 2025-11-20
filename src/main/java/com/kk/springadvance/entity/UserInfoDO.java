@@ -43,7 +43,7 @@ public class UserInfoDO extends BaseDo {
     /**
      * 是否删除
      */
-    private Integer delete;
+    private Integer deleted;
     /**
      * 用户角色
      */
