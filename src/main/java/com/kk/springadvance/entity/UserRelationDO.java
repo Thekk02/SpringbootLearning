@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode
-@TableName("userrelation")
+@TableName("user_relation")
 public class UserRelationDO extends BaseDo {
     private static final long serialVersionUID = 1L;
     /**

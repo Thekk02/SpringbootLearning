@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--<mapper namespace="com.github.paicoding.forum.service.user.repository.mapper.UserRelationMapper">-->
+<mapper namespace="com.kk.springadvance.mapper.UserMapper">
+    <sql id="limit">
+        <if test="pageParam != null">
+            limit #{pageParam.offset}, #{pageParam.limit}
+        </if>
+    </sql>
+    <update id="deleteUserById">
+        UPDATE USER
+        SET USER.deleted = #{userId}
+        WHERE
+            USER.id = 1
+    </update>
+
+    <!--查询用户的所有关注列表，即粉丝id是用户自己-->
+    <select id="getUserFollowList"
+            resultType="com.kk.springadvance.dto.FollowUserDTO">
+        SELECT
+            ur.id as relationId,
+            ur.follow_state as followed,
+            ur.user_id as userId,
+            u.user_name as userName
+        FROM
+            user_relation AS ur
+                LEFT JOIN USER AS u ON ur.user_id = u.id
+        WHERE
+            ur.follow_user_id = #{followUserId}
+            and ur.follow_state = 1
+        ORDER BY u.id desc
+        <include refid="limit"></include>
+
+
+    </select>
+    <select id="getUserFansList"
+            resultType="com.kk.springadvance.dto.FollowUserDTO">
+        SELECT
+            ur.id AS relationId,
+            ur.follow_state AS followed,
+            u.id AS userId,
+            u.user_name AS userName,
+        FROM
+        user_relation AS ur
+        LEFT JOIN USER AS u ON ur.follow_user_id = u.id
+        WHERE
+            u.id = #{userId}
+            and ur.follow_state = 1
+        <include refid="limit"></include>
+    </select>
+
+
+</mapper>

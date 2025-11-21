@@ -62,15 +62,13 @@ servlet:
     max-swallow-size: -1 # 解决上传图片超过2MB之后，出现连接重置的问题
 
 
-security:
-  salt: tech_π # 密码加盐, 更安全的做法是每个用户的密码使用独立的盐，并将其保存在用户表中
-  salt-index: 3 # 盐插入的位置
-
 
 mybatis-plus:
   configuration:
     #开启下划线转驼峰
     map-underscore-to-camel-case: true
+  mapper-locations:
+
 
 knife4j:
   enable: true
@@ -80,19 +78,16 @@ knife4j:
     title: SpringAdvance
     description:  一个基于Springboot的后端API测试系统
     version: 1.0.0
-#    concat:
-#      kk
-#    license: Apache License 2.0
-#    license-url: https://github.com/itwanger/paicoding/blob/main/License
-#    email:
-#    group:
-#      admin:
-#        group-name: 后台接口分组
-#        api-rule: package
-#        api-rule-resources:
-#          - com.github.paicoding.forum.web.admin
-#      front:
-#        group-name: 前台接口分组
-#        api-rule: package
-#        api-rule-resources:
-#          - com.github.paicoding.forum.web.front
+
+#应用通用信息
+springdvance:
+  jwt:
+    issuer: kk_application #签发人
+    seceret: KK_Learning #加密密钥
+    expire: 432000000 # jwt的有效期，默认30天
+
+
+
+security:
+  salt: security_salt # 密码加盐, 更安全的做法是每个用户的密码使用独立的盐，并将其保存在用户表中
+  salt-index: 3 # 盐插入的位置

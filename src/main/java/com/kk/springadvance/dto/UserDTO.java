@@ -9,7 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @author kk
- * @description 用户的DTO
+ * @description 登录用户的DTO
  * @date 2025-11-20 08:31:20
  */
 @Data
@@ -23,7 +23,7 @@ public class UserDTO extends BaseDTO {
     @ApiModelProperty(value = "用户名",required = true)
     private Long userName;
 
-    @ApiModelProperty(value = "用户id",example = "ADMIN|NORMAL")
+    @ApiModelProperty(value = "用户角色",example = "ADMIN|NORMAL")
     private String role;
 
     /**

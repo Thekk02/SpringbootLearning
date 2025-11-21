@@ -23,12 +23,15 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping()
 public class UserController {
     @Autowired
-    private UserServiceImp userService;
+    private UserService userService;
 
     @PostMapping("/login")
     public Result<Boolean> login(HttpServletResponse response){
         return Result.ok(true);
     }
+
+
+
 
 
 }

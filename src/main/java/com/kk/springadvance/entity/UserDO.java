@@ -20,12 +20,10 @@ public class UserDO extends BaseDo {
      * 用户状态
      */
     private Integer deleted;
-
     /**
      * 用户名
      */
     private String userName;
-
     /**
      * 用户密码
      */

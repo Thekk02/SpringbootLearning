@@ -19,7 +19,6 @@ public class UserInfoDO extends BaseDo {
      * 用户id
      */
     private int userId;
-
     /**
      * 用户名
      */

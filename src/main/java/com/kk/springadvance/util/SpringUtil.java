@@ -3,6 +3,7 @@ package com.kk.springadvance.util;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
@@ -49,5 +50,11 @@ public class SpringUtil implements ApplicationContextAware, EnvironmentAware {
         }
     }
 
+    /**
+     * 发布事件消息
+     */
+    public static void publishEvent(ApplicationEvent event){
+        context.publishEvent(event);
+    }
 
 }

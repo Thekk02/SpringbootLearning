@@ -1,9 +1,12 @@
 package com.kk.springadvance.service.Imp;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.kk.springadvance.enums.UserStateEventEnum;
+import com.kk.springadvance.enums.event.UserStateEvent;
 import com.kk.springadvance.mapper.UserMapper;
 import com.kk.springadvance.entity.UserDO;
 import com.kk.springadvance.service.UserService;
+import com.kk.springadvance.util.SpringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +24,16 @@ public class UserServiceImp extends ServiceImpl<UserMapper, UserDO> implements U
     public UserDO getById(Integer id) {
         UserDO user = userMapper.selectById(id);
         return user;
+    }
+
+    @Override
+    public Boolean getUserStateByUserId(Long userId) {
+        return !userMapper.getUserStateByUserId(userId);
+    }
+
+    @Override
+    public void deleteUserById(Long userId) {
+        userMapper.deleteUserById(userId);
+        SpringUtil.publishEvent(new UserStateEvent<>(this,UserStateEventEnum.DELETE,userId));
     }
 }
